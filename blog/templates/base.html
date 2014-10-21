@@ -28,7 +28,9 @@
                 </div>
 
                 <div class="col-md-2">
-                    <div>Blog tags go here!</div>
+                    {% for tag in tags %}
+                        <div><a href="{% url "posts_by_tag" tag.pk %}">{{ tag.name }} ({{ tag.posts.count }})</a></div>
+                    {% endfor %}
                 </div>
             </div>
 
