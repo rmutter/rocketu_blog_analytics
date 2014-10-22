@@ -1,5 +1,12 @@
 ---
 
+- name: Create the local settings file
+  template: src=local_settings.j2
+            dest={{ project_path }}/local_settings.py
+            owner=ubuntu
+            group=ubuntu
+            mode=0755
+
 - name: Install packages required by the Django app inside virtualenv
   pip: virtualenv={{ virtualenv_path }} requirements={{ requirements_file }}
 
@@ -9,7 +16,6 @@
     app_path: '{{ project_path }}'
     virtualenv: '{{ virtualenv_path }}'
     settings: '{{ django_settings_file }}'
-  environment: django_environment
   tags: django
 
 - name: Run Django collectstatic
@@ -18,5 +24,4 @@
     app_path: '{{ project_path }}'
     virtualenv: '{{ virtualenv_path }}'
     settings: '{{ django_settings_file }}'
-  environment: django_environment
   tags: django
