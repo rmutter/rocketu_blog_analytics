@@ -14,6 +14,8 @@ class LocationMiddleware(object):
         if ip is None and settings.DEBUG:
             ip = requests.get('http://icanhazip.com/').text
 
+        8
+
         if ip is not None:
             response = requests.get('http://ipinfo.io/{}/json'.format(ip))
             if response.status_code == 200:
