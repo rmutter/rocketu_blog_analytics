@@ -13,8 +13,6 @@
 - name: Create the Supervisor config file
   template: src=supervisor_config.j2
             dest=/etc/supervisor/conf.d/{{ application_name }}.conf
-  sudo_user: root
 
 - name: Restart Supervisor
   supervisorctl: name={{ application_name }} state=restarted
-  sudo_user: root
