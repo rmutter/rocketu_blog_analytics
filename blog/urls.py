@@ -7,4 +7,6 @@ urlpatterns = patterns('',
     url(r'^blog/$', 'blog.views.blog', name='blog'),
     url(r'^blog/(\d+)/$', 'blog.views.post', name='post'),
     url(r'^blog/tag/(\d+)/$', 'blog.views.posts_by_tag', name='posts_by_tag'),
+
+    url(r'^error/$', 'blog.views.error', name='error'),
 )
