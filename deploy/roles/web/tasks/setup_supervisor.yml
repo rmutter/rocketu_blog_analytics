@@ -14,5 +14,8 @@
   template: src=supervisor_config.j2
             dest=/etc/supervisor/conf.d/{{ project_name }}.conf
 
-- name: Restart Supervisor
+- name: Restart Supervisorctl
   supervisorctl: name={{ project_name }} state=restarted
+
+- name: Restart Supervisor Service
+  service: name=supervisor state=restarted sleep=1
