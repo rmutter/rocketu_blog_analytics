@@ -4,6 +4,6 @@ db_name: "blog_analytics"
 db_user: "blog_analytics"
 db_password: myawesomepassword
 
-nginx_server_name: "ec2-54-191-13-41.us-west-2.compute.amazonaws.com"
+nginx_server_name: "ec2-54-69-85-198.us-west-2.compute.amazonaws.com"
 
 django_settings_file: rocketu_blog_analytics.settings
